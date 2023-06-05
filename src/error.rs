@@ -23,6 +23,8 @@ impl fmt::Display for Error {
     }
 }
 
+impl std::error::Error for Error {}
+
 impl From<character_validator::Error> for Error {
     fn from(error: character_validator::Error) -> Self {
         Error::ValidateError(error)
